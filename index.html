@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Landscape Memory Match</title>
 <style>
-:root{--sand:#fff9f7;--ink:#263238;--card:#ffffff;--a:#d92332;--b:#16834a;--back:#d92332;--saffron:#d9ad45;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--sand:#fff9f7;--ink:#263238;--card:#ffffff;--a:#e56b70;--b:#16834a;--back:#e56b70;--saffron:#d9ad45;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sand:#2a2418;--ink:#fdf3dc;--card:#3a3122;color-scheme:dark}}
 :root[data-theme="dark"]{--sand:#2a2418;--ink:#fdf3dc;--card:#3a3122;color-scheme:dark}
 *{box-sizing:border-box}
@@ -38,10 +38,10 @@ button.new{font:700 1.1rem inherit;font-family:inherit;min-height:48px;padding:0
 <body>
 <h1>Landscape Memory Match</h1>
 <div class="teams">
-  <div class="team a on" id="ta"><b>Team A</b><span id="sa">0</span></div>
-  <div class="team b" id="tb"><b>Team B</b><span id="sb">0</span></div>
+  <div class="team a on" id="ta"><b>الفريق الأحمر</b><span id="sa">0</span></div>
+  <div class="team b" id="tb"><b>الفريق الأخضر</b><span id="sb">0</span></div>
 </div>
-<div class="msg" id="msg">Team A, flip two cards!</div>
+<div class="msg" id="msg">الفريق الأحمر، اقلب بطاقتين!</div>
 <div class="board" id="board"></div>
 <button class="new" id="new">New game</button>
 <p class="credit">Muna Alziedi</p>
@@ -51,7 +51,7 @@ var W=["river", "mountain", "lake", "waterfall", "city", "town", "forest", "hill
 var board=document.getElementById("board"),msg=document.getElementById("msg");
 var turn,score,first,lock,found;
 function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
-function name(t){return t?"Team B":"Team A"}
+function name(t){return t?"الفريق الأخضر":"الفريق الأحمر"}
 function ui(){
   document.getElementById("sa").textContent=score[0];
   document.getElementById("sb").textContent=score[1];
@@ -67,7 +67,7 @@ function start(){
     b.innerHTML='<div class="in"><div class="k">?</div><div class="f'+(c.t==="word"?' word':'')+'">'+(c.t==="pic"?'<img alt="'+c.w+'" src="'+IMG[c.w]+'">':'<span class="w">'+c.w+'</span>')+'</div></div>';
     b._c=c;b.onclick=function(){flip(b)};board.appendChild(b);
   });
-  msg.textContent="Team A, flip two cards!";ui();
+  msg.textContent="الفريق الأحمر، اقلب بطاقتين!";ui();
 }
 function flip(b){
   if(lock||b.classList.contains("open")||b.classList.contains("done"))return;
