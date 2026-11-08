@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Landscape Memory Match</title>
 <style>
-:root{--sand:#f6e7c6;--ink:#1f2d3a;--card:#fffaf0;--a:#d94a6a;--b:#1f7fb8;--back:#3c8d4f;--saffron:#f2a93b;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--sand:#fff9f7;--ink:#263238;--card:#ffffff;--a:#d92332;--b:#16834a;--back:#d92332;--saffron:#d9ad45;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sand:#2a2418;--ink:#fdf3dc;--card:#3a3122;color-scheme:dark}}
 :root[data-theme="dark"]{--sand:#2a2418;--ink:#fdf3dc;--card:#3a3122;color-scheme:dark}
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%}
-body{background:var(--sand);color:var(--ink);font-family:"Trebuchet MS",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:12px;gap:10px}
+body{background:linear-gradient(145deg,#fff 0%,#fff9f7 58%,#f0f8f2 100%);color:var(--ink);font-family:"Trebuchet MS",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:12px;gap:10px}
 h1{margin:0;font-size:1.7rem;text-align:center}
 .teams{display:flex;gap:10px;width:100%;max-width:520px}
-.team{flex:1;background:var(--card);border:4px solid var(--c);border-radius:18px;padding:6px;text-align:center;opacity:.55;transition:.2s}
-.team.on{opacity:1;transform:scale(1.04);box-shadow:0 0 0 4px var(--c)}
+.team{flex:1;background:var(--card);border:3px solid var(--c);border-radius:18px;padding:8px;text-align:center;opacity:.62;transition:.2s;box-shadow:0 4px 12px #26323812}
+.team.on{opacity:1;transform:scale(1.035);box-shadow:0 0 0 3px #d9ad4555,0 7px 18px #26323820}
 .team.a{--c:var(--a)}.team.b{--c:var(--b)}
 .team b{display:block;color:var(--c);font-size:1rem}
 .team span{font-size:2rem;font-weight:800}
@@ -22,15 +22,15 @@ h1{margin:0;font-size:1.7rem;text-align:center}
 .c{aspect-ratio:1/1;perspective:600px;border:0;background:none;padding:0;cursor:pointer}
 .in{position:relative;width:100%;height:100%;transition:transform .4s;transform-style:preserve-3d}
 .c.open .in,.c.done .in{transform:rotateY(180deg)}
-.f,.k{position:absolute;inset:0;border-radius:14px;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;border:3px solid var(--ink)}
-.k{background:var(--back);color:#fff;font-size:2rem}
-.f{transform:rotateY(180deg);background:var(--card);flex-direction:column;font-weight:800}
+.f,.k{position:absolute;inset:0;border-radius:14px;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;border:2px solid #ffffff}
+.k{background:linear-gradient(90deg,#d92332 0 22%,transparent 22%),linear-gradient(to bottom,#ffffff 0 33.3%,#16834a 33.3% 66.6%,#d92332 66.6% 100%);color:#ffffff;font-size:2rem;font-weight:900;text-shadow:0 1px 3px #26323899;box-shadow:inset 0 0 0 2px #d9ad45}
+.f{transform:rotateY(180deg);background:var(--card);flex-direction:column;font-weight:800;border:3px solid #d9ad45}
 .f img{width:100%;height:100%;object-fit:cover;border-radius:11px}
 .f .w{font-size:clamp(.8rem,3.6vw,1.2rem)}
 .f.word{font-size:1.05rem;padding:2px;word-break:break-word}
-.c.done .f{background:#d7f0d0;color:#1f2d3a}
+.c.done .f{background:#e5f5e9;color:#17643a;border-color:#16834a}
 .msg{min-height:2.2rem;font-size:1.3rem;font-weight:800;text-align:center}
-button.new{font:700 1.1rem inherit;font-family:inherit;min-height:48px;padding:0 24px;border-radius:24px;border:3px solid var(--ink);background:var(--saffron);color:#1f2d3a;cursor:pointer}
+button.new{font:700 1.1rem inherit;font-family:inherit;min-height:48px;padding:0 24px;border-radius:24px;border:2px solid #b88a24;background:linear-gradient(135deg,#fff 0 35%,#d92332 35% 48%,#16834a 48% 100%);color:#fff;text-shadow:0 1px 2px #26323888;cursor:pointer;box-shadow:0 5px 14px #26323820}
 .credit{margin:0;font-weight:700}
 @media (prefers-reduced-motion:reduce){.in,.team{transition:none}}
 </style>
